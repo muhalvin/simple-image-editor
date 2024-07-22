@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         textInstance = text;
         canvas.add(text);
+        canvas.setActiveObject(text);
         canvas.renderAll();
         saveState();
     });
@@ -125,30 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('italic').addEventListener('click', () => {
         if (textInstance) {
             textInstance.set({ fontStyle: textInstance.fontStyle === 'italic' ? 'normal' : 'italic' });
-            canvas.renderAll();
-            saveState();
-        }
-    });
-
-    document.getElementById('align-left').addEventListener('click', () => {
-        if (textInstance) {
-            textInstance.set({ textAlign: 'left' });
-            canvas.renderAll();
-            saveState();
-        }
-    });
-
-    document.getElementById('align-center').addEventListener('click', () => {
-        if (textInstance) {
-            textInstance.set({ textAlign: 'center' });
-            canvas.renderAll();
-            saveState();
-        }
-    });
-
-    document.getElementById('align-right').addEventListener('click', () => {
-        if (textInstance) {
-            textInstance.set({ textAlign: 'right' });
             canvas.renderAll();
             saveState();
         }
